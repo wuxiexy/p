@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font: 0/1 '微软雅黑';
+    vertical-align: middle;
+}
+body {
+    min-width: 750px;
+}
+table {
+    margin: 20px auto 0;
+}
+tr td {
+    font-size: 14px;
+    line-height: 22px;
+    border-left: 1px solid #000;
+    text-align: center;
+    padding: 0 12px;
+}
+tr:nth-child(1) td:nth-child(5) {
+    color: #000;
+}
+tr td:nth-child(5) {
+    color: #FF7101;
+}
