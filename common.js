@@ -5,6 +5,10 @@ window.onload = function () {
         , container = doc.getElementById('sds1_resultTable')
         , con = container.innerHTML
         , docBody = doc.body, trs, len, i = 1, td, area, price, currentTd
+        , areatotal = 0
+        , pricetotal = 0
+        , total = 0
+        , tr = doc.createElement('tr')
     ;
 
     doc.head.innerHTML = '';
@@ -27,6 +31,10 @@ window.onload = function () {
         currentTd = current.getElementsByTagName('td');
         price = +currentTd[3].innerHTML;        // 总金额
         area = +currentTd[2].innerHTML;         // 总面积
+
+        areatotal += area;
+        pricetotal += price;
+
         td = doc.createElement('td');
         if (price == 0 || area == 0) {
             td.innerHTML = 0;
@@ -36,4 +44,7 @@ window.onload = function () {
         current.appendChild(td);
     }
     window.console.clear();
+    total = (pricetotal / areatotal * 10000).toFixed(2) + ' 元'
+    tr.innerHTML = '<td>-</td><td>-</td><td>'+areatotal.toFixed(2)+' ㎡</td><td>'+pricetotal.toFixed(2)+' 万</td><td>平均 '+total+'</td>';
+    container.getElementsByTagName('tbody')[0].appendChild(tr);
 }
